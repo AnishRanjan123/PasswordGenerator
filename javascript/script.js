@@ -1,25 +1,28 @@
-/*let username=prompt('Enter full name');
-let str1='@';
-let str2=username;
-let str3=str2.length;
-console.log('username should be: ',str1+str2+str3);
-
-let arr=[23,4,45,56,67,89,10,11];
-for(let i=0;i<arr.length;i++)
-{
-    console.log(arr[i]);
+function generatePassword() {
+    const length = document.getElementById('length').value;
+    const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+~`|}{[]:;?><,./-=";
+    let password = "";
+    for (let i = 0, n = charset.length; i < length; ++i) {
+        password += charset.charAt(Math.floor(Math.random() * n));
+    }
+    document.getElementById('password').value = password;
 }
 
-let arr=[85,97,44,37,76,60];
-let sum=0;
-for(let i=0;i<arr.length;i++ )
-    {
-sum+=arr[i]/arr.length;
+function validatePassword() {
+    const password = document.getElementById('customPassword').value;
+    const validationMessage = document.getElementById('validationMessage');
+    
+    const hasUpperCase = /[A-Z]/.test(password);
+    const hasLowerCase = /[a-z]/.test(password);
+    const hasNumbers = /\d/.test(password);
+    const hasNonalphas = /\W/.test(password);
+    const isValidLength = password.length >= 8;
+
+    if (hasUpperCase && hasLowerCase && hasNumbers && hasNonalphas && isValidLength) {
+        validationMessage.style.color = 'green';
+        validationMessage.textContent = 'Password is strong!';
+    } else {
+        validationMessage.style.color = ' red';
+        validationMessage.textContent = 'Password should be at least 8 characters long and include uppercase letters, lowercase letters, numbers, and special characters.';
     }
-    console.log(sum);
-    */
-   let arr=[2,4,3,6];
-   arr.forEach((arr)=>
-   {
-    console.log(arr*arr);
-   })
+}

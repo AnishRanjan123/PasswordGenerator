@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock paper scissor game</title>
-   
+    <title>Password Generator</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+      body {
+        background-image: url('https://www.shutterstock.com/shutterstock/videos/1079786111/thumb/12.jpg?ip=x480');
+     
+      }
+    </style>
 </head>
 <body>
-
-  <h1>Rock Paper Scissor</h1>
-  <div class="choices">
-    <div class="choice" id="stone">
-        <img src="data:image/png;base64,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" height="160px" width="160px">
-      </div>
-    <div class="choice" id="scissor">
-         <img src="https://www.clipartkey.com/mpngs/m/5-54540_rock-paper-scissors-random-rock-paper-scissors-png.png" height="160px" width="160px">
+    
+  
+    <div class="container">
+        <h1 class="h1">Password Generator</h1>
+        <div class="generator">
+            <label for="length">Password Length:</label>
+            <input type="number" id="length" min="1" max="50" value="12">
+            <button onclick="generatePassword()">Generate</button>
+            <input type="text" id="password" readonly>
+        </div>
+        <div class="manual">
+            <h2 class="h2">Enter Your Own Password</h2>
+            <label for="customPassword">Your Password:</label>
+            <input type="text" id="customPassword">
+            <button onclick="validatePassword()">Validate</button>
+            <p id="validationMessage"></p>
+        </div>
     </div>
-    <div class="choice" id="paper">
-        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210705223645/paper.jpeg" height="160px" width="160px">
-    </div>
-  </div>
-  <div class="scoreboard">
-    <div class="score">
-        <p id="user-score">0</p>
-        <p>you</p>
-    </div>
-    <div class="class">
-        <p id="computer-score">0</p>
-        <p>computer</p>
-    </div>
-  </div>
-  <div class="msg-container">
-    <p id="msg">Play Your Move</p>
-  </div>
+  
+    <script src="script.js"></script>
 </body>
-<script src="gameapp.js"></script>
 </html>
